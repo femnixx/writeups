@@ -85,6 +85,31 @@ Pivoted from a known-malicious external IP backward through the traffic to ident
 
 ---
 
+### 🔍 Kongtuke Rebuke — Infected Host Identification (Behavioral)
+**Source:** MalwareTrafficAnalysis.net | **Category:** Network Forensics
+
+A step up from pivoting off a pre-identified bad IP: flagged the infected host by recognizing a **beaconing pattern** (short, repeated communication intervals to an external host) rather than being handed the malicious IP directly, then confirmed identity details via Ethernet II and Kerberos.
+
+[Read the full write-up →](./writeups/kongtuke-rebuke.md)
+
+---
+
+### 🔍 First to Last — Infected Host Identification
+**Source:** MalwareTrafficAnalysis.net | **Category:** Network Forensics
+
+Same investigative approach as above, applied in a more structured, repeatable sequence — a sign the identification process (suspect host → MAC → Kerberos identity → deduced full name) is becoming a consistent method rather than something re-derived each time.
+
+[Read the full write-up →](./writeups/first-to-last.md)
+
+---
+
+### 🚧 Lockdown Lab (in progress)
+**Source:** CyberDefenders | **Category:** Network Forensics / Web Attack
+
+Currently working through this one. Solved so far: identified the reconnaissance source IP (flooding an IIS host with rapid-fire probes) and the enumeration tool in use (nmap, identified via HTTP request headers). Remaining questions — SMB Tree Connect UNC paths, the uploaded malicious file, and the reverse shell's listening port — are still open.
+
+---
+
 ## Skills
 
 **Analysis tools:** Wireshark (display filters, Follow TCP Stream, Statistics/Endpoints, Export HTTP Objects), CyberChef (encoding/decoding, obfuscation recovery)
