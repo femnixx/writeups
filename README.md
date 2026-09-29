@@ -103,6 +103,15 @@ Same investigative approach as above, applied in a more structured, repeatable s
 
 ---
 
+### 🔍 It's a Trap! — Infected Host in an Active Directory Environment
+**Source:** MalwareTrafficAnalysis.net | **Category:** Network Forensics
+
+Narrowed two IP candidates by behavior rather than address alone (confirmed the domain controller by its role, not its low IP number), traced the infected host's DHCP handshake to anchor its identity at the moment it joined the network, and pulled the hostname, MAC, and username via Ethernet II and Kerberos traffic to the DC.
+
+[Read the full write-up →](./writeups/its-a-trap.md)
+
+---
+
 ### 🚧 Lockdown Lab (in progress)
 **Source:** CyberDefenders | **Category:** Network Forensics / Web Attack
 
