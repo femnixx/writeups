@@ -112,10 +112,41 @@ Narrowed two IP candidates by behavior rather than address alone (confirmed the 
 
 ---
 
+### 🔍 Shiba Insider — Steganography & Credential Recovery
+**Source:** Blue Team Labs Online | **Category:** Digital Forensics
+
+Recovered Base64-encoded credentials from a pcap, then used ExifTool and Steghide to extract a hidden payload from an image file. Noted honestly: I knew steganography was involved but needed pointers on which tools to reach for — the actual extraction and reasoning from there was my own.
+
+[Read the full write-up →](./writeups/shiba-insider.md)
+
+---
+
+### 🔍 AWS CloudTrail Analysis — Cloud Compromise
+**Source:** CyberDefenders | **Category:** Cloud Forensics / Log Auditing
+
+Investigated an AWS credential compromise using Splunk against CloudTrail logs — my first time with SPL, so I reasoned through what event type should correspond to each stage of the attack (initial login, data access, public exposure attempt, persistence via a rogue admin account) and asked for correct query syntax as I went.
+
+[Read the full write-up →](./writeups/aws-cloudtrail.md)
+
+---
+
 ### 🚧 Lockdown Lab (in progress)
 **Source:** CyberDefenders | **Category:** Network Forensics / Web Attack
 
 Currently working through this one. Solved so far: identified the reconnaissance source IP (flooding an IIS host with rapid-fire probes) and the enumeration tool in use (nmap, identified via HTTP request headers). Remaining questions — SMB Tree Connect UNC paths, the uploaded malicious file, and the reverse shell's listening port — are still open.
+
+---
+
+## Guided Lab Sessions
+
+These are real investigations on real lab evidence, using each platform's own tools and hints — but on topics I had little or no prior exposure to, so I leaned much more heavily on real-time explanation than in the investigations above. Labeling this honestly since the process looked different, even though the underlying lab work is genuine.
+
+### 🔐 Credentials Poisoning — CyberDefenders
+**Category:** Network Forensics / Active Directory Attack
+
+Investigated an LLMNR poisoning and NTLM relay attack — my first exposure to this class of legacy-protocol attack. Traced a mistyped network path to a broadcast fallback, a rogue internal machine spoofing the response to steal a user's credentials, and the subsequent lateral movement to a second machine via SMB. Got the two-phase structure of the attack wrong on my first attempt (confusing the fake identity used to steal credentials with the real machine later accessed using them) before working out the distinction.
+
+[Read the write-up →](./writeups/credentials-poisoning.md) · [Read the lessons-learned notes →](./writeups/credentials-poisoning-lessons-learned.md)
 
 ---
 
